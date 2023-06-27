@@ -1,0 +1,138 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+	/*display: flex;*/ /*agregado flexbox*/
+	/*gap: 20px;*/ /*agregado flexbox*/
+	display: grid;
+	grid-template-columns: 3fr 1fr; /* primera columna 3 veces mas ancha que la segunda*/
+	gap: 20px;
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-pizzas {
+	/*width: 70%; agregado flexbox*/
+	/*display: flex; agregado flexbox*/
+	/*flex-wrap: wrap; que sea responsive agregado flexbox*/
+	/*gap: 20px; espacio entre cada elemento gregado flexbox*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden; /*si algo sale que no se vea*/
+	background-size: cover;
+	background-position: center center;
+	/*width: 33.33%; agregado flexbox*/
+	/*width: calc(33.33% - 20px); agregado flexbox*/
+}
+.card:hover{
+	box-shadow: 0 1px 6px 0 #20212447;
+}
+
+.card .textos {
+	height: 100%;
+	/*display: flex; agregado flexbox*/
+	/*flex-direction: column;  que se apilen como una columna agregado flexbox*/
+	/*justify-content: space-between; agregado flexbox*/
+	display: grid;
+	grid-template-rows: 1fr auto;
+	color:#fff
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+	/*width: 30%; agregado flexbox*/
+	/*display: flex; agregado flexbox*/
+	/*flex-direction: column; agregado flexbox*/
+	/*justify-content: space-between; agregado flexbox*/
+	display: grid;
+	grid-template-rows: auto auto auto;
+	align-items: center;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) { /*si el ancho de la pantalla es este, que se aplique este estilo y asi con todos los demas anchos*/
+	.contenedor{
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.card{
+		min-height: 150px;
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.banner{
+		grid-template-rows: auto auto;
+	}
+}
+
+/*width: 70%;: Esta propiedad establece el ancho del contenedor al 70% del ancho del elemento que lo contiene. 
+
+display: flex;: Esta propiedad convierte el contenedor en un contenedor flexbox. Flexbox es un modelo de diseño de CSS que permite alinear y distribuir espacio entre los elementos de un contenedor de una manera que se adapte al tamaño del contenedor. Esto significa que puedes alinear los elementos fácilmente tanto vertical como horizontalmente, y los elementos flexibles se adaptarán al espacio disponible. 
+
+flex-wrap: wrap;: Normalmente, los elementos flexibles tratarán de ajustarse todos en una línea, independientemente de cuántos sean. flex-wrap: wrap; cambia este comportamiento, permitiendo que los elementos se ajusten en líneas adicionales a medida que se necesita. Esta propiedad es especialmente útil cuando se usa Flexbox para construir un diseño responsive, en el que la cantidad de espacio disponible puede variar. 
+
+gap: 20px;: Esta propiedad define el tamaño del espacio entre los elementos flex en un contenedor  
+
+flexbox. En este caso, el espacio entre cada elemento será de 20 píxeles. 
+
+width: 33.33%;: Esta propiedad establece la anchura del elemento a un tercio (33.33%) del ancho de su elemento contenedor. 
+
+width: calc(33.33% - 20px);: Esta propiedad también establece la anchura del elemento, pero esta vez utiliza una función de cálculo para restar 20px del 33.33% del ancho del contenedor. Sin embargo, esta línea de código anula la línea anterior debido a que se lee después. Es importante notar que el soporte para la función calc() puede variar en diferentes navegadores. 
+
+hay una distinción importante: display: flex; es la forma moderna y estandarizada para aplicar flexbox, mientras que display: flexbox; es una sintaxis antigua y obsoleta que se utilizó en las versiones preliminares de la especificación de flexbox. */
